@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AccountService } from 'src/app/services/account/account.service';
 
 @Component({
   selector: 'app-navigation-bar',
@@ -7,7 +8,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavigationBarComponent implements OnInit {
 
-  constructor() { }
+  constructor(private accountService : AccountService) {
+    console.log(accountService.getUsername())
+  }
 
   ngOnInit(): void {
   }
