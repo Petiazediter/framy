@@ -5,8 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
 import { NavigationBarComponent } from './components/navigation-bar/navigation-bar.component';
-import { CookieService } from 'angular2-cookie/services/cookies.service';
-
+import {CookieModule} from 'ngx-cookie'
 @NgModule({
   declarations: [
     AppComponent,
@@ -15,9 +14,10 @@ import { CookieService } from 'angular2-cookie/services/cookies.service';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    CookieModule.forRoot()
   ],
-  providers: [CookieService],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
