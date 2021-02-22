@@ -1,0 +1,109 @@
+:root{
+  --green: #8FDD6E; 
+  --blue: #4FB4F4; 
+  --red: #F44848;
+  --yellow: #FADB3D;
+} 
+
+@media only screen and (min-width: 1200px) and (min-height: 776px) {
+
+#start-project-btn{
+  position: absolute;
+  top: 50%;
+  margin-top: 120px;
+  left:50%;
+  width:300px;
+  height: 50px;
+  transform:translate(-50%,-50%);
+  background: #4FB4F4;
+  border: 0px none;
+  border-radius: .5rem;
+  font-family: 'Fredoka';
+  font-size: 2rem;
+  color: white;
+  cursor:pointer;
+}
+
+#start-project-btn:active{
+  border: 0px none;
+  outline: none;
+}
+
+#start-project-btn:focus{
+  border: 0px none;
+  outline: none;
+}
+
+.content{
+  position: absolute;
+  width: 100%;
+  height: 90px;
+  overflow: hidden;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  margin: 0 auto;
+  padding: 0%;
+  text-align: center;
+  justify-content: center;
+}
+
+.content__container{
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transform: translate(0%,-90px);
+  font-family: 'Fredoka';
+  font-size: 5rem;
+  display: flex;
+  justify-content: center;
+}
+
+.content__container__list__item{
+  text-align: left;
+}
+
+.content__container__list{
+  list-style-type: none;
+  animation: flip4 6s cubic-bezier(0.23, 1, 0.32, 1.2) infinite;
+}
+
+@keyframes flip4 {
+  //1
+  0% { margin-top: -205px; }
+  5% { margin-top: -205px; }
+  // 2
+  25%{ margin-top: -112px }
+  30%{ margin-top: -112px;}
+  //3
+  50%{margin-top: -19px}
+  55%{margin-top:-19px}
+  //4
+  75%{margin-top: 74px;}
+  80%{margin-top: 74px}
+  100%{ margin-top: -205px; }
+}
+
+  .planes{
+    position: absolute;
+    bottom: 5%;
+    left: 50%;
+    width: 40%;
+    transform: translateX(-20%) rotate(-10deg);
+  }
+}
+
+.green{
+  color:#8FDD6E;
+}
+
+.blue{
+  color:#4FB4F4;
+}
+.yellow{
+  color : #FADB3D;
+}
+.red{
+  color: #F44848;
+}
+
