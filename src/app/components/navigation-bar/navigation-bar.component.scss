@@ -1,59 +1,99 @@
 @media only screen and (min-width: 1200px) and (min-height: 776px) {
-.header{
-    display: flex;
-    background-color: #373737;
-    padding: 10px;
-    width: 100%;
-    max-height: 40px;
-
-    ul {
-      display: flex;
-      list-style-type: none;
-      justify-content: space-evenly;
-      align-items: center;
-      padding: .1em 0;
-    }
-  
-    li a{
-      text-decoration: none;
-      font-family: Arial, Helvetica, sans-serif, 'Icofont';
-      color: white;
-      font-size: 1.2rem;
-      padding-right: 1em;
-      position: relative;
-    }
-
-    li:nth-child(1){
-      padding-right: 5rem;
-      padding-left:5rem;
-      color:#8FDD6E;
-    }
-
-    li:nth-child(5){
-      position: absolute;
-      right: 0%;
-      padding-right: 3em;
-    }
-
-    .logo{
-      font-family: 'LogoFont';
-      color: white;
-      font-size: 1.5rem;
-      align-content: center;
-      text-align: center;
-    }
-
-    li:nth-child(4){
-      position: absolute;
-      right: 70px;
-      padding-right: 2em;
-    }
+  *{
+    color: white;
+    margin: 0;
+    padding:0;
+    box-sizing: border-box;
+    font-family: 'Fredoka';
   }
 
-  .icon{
-    font-family: 'Icofont';
+  nav{
+    background-color: #373737;
+    width: 100%;
+  }
+
+  nav::after{
+    content: '';
+    clear: both;
+    display: table;
+  }
+
+  nav ul{
+    float: left;
+    list-style: none;
+    margin-right: 40px;
+    position: relative;
+    cursor: pointer;
+  }
+
+  nav ul.icons{
+    float: right;
+    list-style: none;
+    margin-right: 40px;
+    position: relative;
+  }
+
+  nav ul li a.logo {
+    font-family: 'LogoFont';
+    
+  }
+
+  nav ul.icons li{
+    float: right;
+    display: inline-block;
+    margin: 0 5px;
+  }
+
+  nav ul.icons li a{
     color: white;
-    font-size: 1.2rem;
-    padding-right: .3em;
+    text-decoration: none;
+    line-height: 70px;
+    font-size: 18px;
+    padding: 8px 15px;
+    font-family: 'Icofont';
+  }
+
+  nav ul li{
+    float: left;
+    display: inline-block;
+    margin: 0 5px;
+  }
+
+  nav ul li a{
+    color: white;
+    text-decoration: none;
+    line-height: 70px;
+    font-size: 18px;
+    padding: 8px 15px;
+  }
+
+  nav ul ul {
+    position: absolute;
+    top:90px;
+    background-color: #373737;
+    font-size: 18px;
+    visibility: hidden;
+    transition: top .3s;
+    transform: translateX(-50%);
+  }
+
+  nav ul li:hover > ul{
+    opacity: 1;
+    visibility: visible;
+    top: 70px;
+  }
+
+  nav ul ul li{
+    font-family: 'Fredoka';
+    padding: 10px;
+    border-bottom: 2px solid #646464;
+    position: relative;
+    margin : 0px;
+    width: max-content;
+    float: none;
+    display: list-item;
   }
 }
+
+//font-family: 'LogoFont';
+//font-family: 'Icofont';
