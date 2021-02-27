@@ -13,17 +13,7 @@ export class HomeComponent implements OnInit {
   constructor(private accountApi : AccountApiService) { }
 
   ngOnInit(): void {
-    this.getAccounts();
   }
 
-  getAccounts() : Account[] {
-      this.accountApi.getAllAccount().subscribe( accounts =>{ 
-        this.accounts = accounts;
-        console.log("accounts:")
-        console.log(accounts);
-      }) 
-      return this.accounts;
-
-  }
 
 }
