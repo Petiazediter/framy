@@ -23,7 +23,7 @@
     list-style: none;
     margin-right: 40px;
     position: relative;
-    cursor: pointer;
+    cursor: default;
   }
 
   nav ul.icons{
@@ -49,7 +49,7 @@
     text-decoration: none;
     line-height: 70px;
     font-size: 18px;
-    padding: 8px 15px;
+    padding: 8px 10px;
     font-family: 'Icofont';
   }
 
@@ -74,6 +74,7 @@
     font-size: 18px;
     visibility: hidden;
     transition: top .3s;
+    width: 200%;
     transform: translateX(-50%);
   }
 
@@ -85,13 +86,19 @@
 
   nav ul ul li{
     font-family: 'Fredoka';
-    padding: 10px;
     border-bottom: 2px solid #646464;
     position: relative;
     margin : 0px;
-    width: max-content;
-    float: none;
+    width: 100%;
     display: list-item;
+    text-align: center;
+  }
+  
+  nav ul ul li a {
+      font-family: 'Fredoka';
+      transform: translateX(100%);
+      padding: 0px;
+      text-align: center;
   }
 }
 
