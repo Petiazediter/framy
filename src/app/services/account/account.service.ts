@@ -1,28 +1,27 @@
 import { Injectable } from '@angular/core';
 import { CookieOptionsProvider, CookieService, COOKIE_OPTIONS } from 'ngx-cookie';
+import { Observable } from 'rxjs';
+import { Account } from 'src/app/model/Account';
+import { AccountApiService } from '../api/account/account-api.service';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AccountService {
 
-  private static key_username : string = "com.codecool.cookies.username"
-  private static key_password : string = "com.codecool.cookies.password"
+  account : Account;
+  accountObserver : Observable<Account>
 
-  constructor(private cookieService : CookieService) {
-
+  constructor(private accountApi : AccountApiService) {
+    const username = localStorage.getItem("username")
+    const password = localStorage.getItem("password")
+    if ( username != null && password != null){
+     this.accountObserver= accountApi.loginAccount(new Account(username,password,""))
+    }
   }
 
-  getUsername() : string {
-    return this.cookieService.get(AccountService.key_username);
-  }
-
-  getPassword(): string{
-    return this.cookieService.get(AccountService.key_password);
-  }
-
-  setUsername(username : string) : void{
-    this.cookieService.put(AccountService.key_username,username, )
+  loginAccount(account){
+    this.account = account;
   }
 
 }
