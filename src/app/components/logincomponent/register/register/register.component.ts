@@ -61,12 +61,13 @@ export class RegisterComponent implements OnInit {
     this.account = new Account(this.username,this.password,this.email)
     this.isLoading =true
     this.accountService.addAccount(this.account).subscribe(
-      (account : Account) => {                           //Next callback
-        console.log('response received ' + account)
+      (account : Account) => {                     
         if (account == null){
           alert("Username or email address is already taken.")
         }
         this.isLoading = false
+        localStorage.setItem("username", this.account.username)
+        localStorage.setItem("password",this.account.password)
       },
       (error) => {                              //Error callback
         alert("Server error. Try again later.")
