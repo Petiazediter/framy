@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { AccountService } from 'src/app/services/account/account.service';
+import { AccountApiService } from 'src/app/services/api/account/account-api.service';
+import {Account} from 'src/app/model/Account'
 
 @Component({
   selector: 'app-home',
@@ -7,9 +10,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  constructor() { }
+  accountInstance : Account
+
+  constructor(private accountApi : AccountApiService, private accountService  :AccountService) {
+    if (accountService.accountObserver != null){
+      accountService.accountObserver.subscribe((account:Account) => {
+        if ( account != null){
+            this.accountInstance = account;
+        }
+      })
+    }
+  }
 
   ngOnInit(): void {
-  }
+
+  } 
+
 
 }

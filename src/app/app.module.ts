@@ -5,16 +5,27 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
 import { NavigationBarComponent } from './components/navigation-bar/navigation-bar.component';
+import {CookieModule} from 'ngx-cookie'
+import {HttpClientModule } from '@angular/common/http';
+import { LoginComponent } from './components/logincomponent/login/login/login.component';
+import { RegisterComponent } from './components/logincomponent/register/register/register.component'
+import { FormsModule } from '@angular/forms'
+
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    NavigationBarComponent
+    NavigationBarComponent,
+    LoginComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    CookieModule.forRoot(),
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,6 +1,5 @@
-
-
-<div class="content">
+<div *ngIf="accountInstance == null">
+<div  class="content">
   <div class="content__container">
     <p class="content__container__text" style="color: #373737;">
       Framy for
@@ -15,6 +14,5 @@
   </div>
 </div>
 
-<button id="start-project-btn">Let's start!</button>
-
-<img class="planes" src="assets/images/Frame 1.svg"/>
+<button id="start-project-btn" routerLink="/login">Let's start!</button>
+</div>
