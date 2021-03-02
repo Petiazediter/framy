@@ -7,3 +7,24 @@
     font-family: 'LogoFont';
     src: url("/assets/fonts/logo-font.ttf");
   }
+
+  .button{
+    border: 0px none;
+    font-family: 'Fredoka';
+    cursor:pointer;
+    color: white;
+  }
+  
+  .button:active{
+    border: 0px none;
+    outline: none;
+  }
+  
+  .button:focus{
+    border: 0px none;
+    outline: none;
+  }
+
+  .button-blue{
+    background: #4FB4F4;
+  }
