@@ -7,13 +7,15 @@ import { HomeComponent } from './components/home/home.component';
 import { NavigationBarComponent } from './components/navigation-bar/navigation-bar.component';
 import {CookieModule} from 'ngx-cookie'
 import {HttpClientModule } from '@angular/common/http';
-import { LoginComponent } from './components/logincomponent/login/login/login.component'
+import { LoginComponent } from './components/logincomponent/login/login/login.component';
+import { RegisterComponent } from './components/logincomponent/register/register/register.component'
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     NavigationBarComponent,
-    LoginComponent
+    LoginComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,
