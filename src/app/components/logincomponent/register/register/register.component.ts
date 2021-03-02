@@ -41,23 +41,18 @@ export class RegisterComponent implements OnInit {
   private isValid() : boolean{
     
     if ( this.password != this.password2){
-      console.log("Password not same")
+      alert("The given passwords not matching!")
       return false
-
     } else if(!this.usernameAndPasswordRegex.test(this.username)) {
-      console.log("Username contains illegal character")
       alert("The given username contains illegal character(s)!")
       return false
     } else if (this.username.length < 5){
-      console.log("Username too short")
       alert("The given username is too short!")
       return false
     } else if (this.password.length<5){
-      console.log("Password too short")
       alert("The given password is too short!")
       return false
     } else if (!this.emailRegex.test(this.email)){
-      console.log("Email not valid")
       alert("The format of the email address is not valid!")
       return false
     }
@@ -66,15 +61,14 @@ export class RegisterComponent implements OnInit {
     this.account = new Account(this.username,this.password,this.email)
     this.isLoading =true
     this.accountService.addAccount(this.account).subscribe(
-      (account) => {                           //Next callback
+      (account : Account) => {                           //Next callback
         console.log('response received ' + account)
         if (account == null){
-          console.log("fail")
+          alert("Username or email address is already taken.")
         }
         this.isLoading = false
       },
       (error) => {                              //Error callback
-        console.error('error caught in component ' + error)
         alert("Server error. Try again later.")
         this.isLoading = false
     });
