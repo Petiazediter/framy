@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Account } from 'src/app/model/Account';
+import { AccountService } from 'src/app/services/account/account.service';
 import { AccountApiService } from 'src/app/services/api/account/account-api.service';
 
 @Component({
@@ -14,7 +15,7 @@ export class LoginComponent implements OnInit {
   password : string;
   isLoading : boolean = false
 
-  constructor(private apiService : AccountApiService) {
+  constructor(private apiService : AccountApiService, private accountService : AccountService) {
    }
 
   ngOnInit(): void {
@@ -33,6 +34,7 @@ export class LoginComponent implements OnInit {
         } else {
           localStorage.setItem("username", this.username)
           localStorage.setItem("password",this.password)
+          this.accountService.loginAccount(account)
         }
       },
       (error) => {   

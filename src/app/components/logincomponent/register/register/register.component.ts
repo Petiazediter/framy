@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms'
 import { Account } from 'src/app/model/Account';
+import { AccountService } from 'src/app/services/account/account.service';
 import { AccountApiService } from 'src/app/services/api/account/account-api.service';
 
 @Component({
@@ -19,7 +20,7 @@ export class RegisterComponent implements OnInit {
   email : string;
   isLoading : boolean = false;
 
-  constructor(private accountService : AccountApiService) { 
+  constructor(private accountService : AccountApiService, private accountServ : AccountService) { 
   }
 
   ngOnInit(): void {
@@ -68,6 +69,7 @@ export class RegisterComponent implements OnInit {
         this.isLoading = false
         localStorage.setItem("username", this.account.username)
         localStorage.setItem("password",this.account.password)
+        this.accountServ.loginAccount(account)
       },
       (error) => {                              //Error callback
         alert("Server error. Try again later.")
