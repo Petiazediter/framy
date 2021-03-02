@@ -66,8 +66,11 @@ export class RegisterComponent implements OnInit {
     this.account = new Account(this.username,this.password,this.email)
     this.isLoading =true
     this.accountService.addAccount(this.account).subscribe(
-      (response) => {                           //Next callback
-        console.log('response received ' + response)
+      (account) => {                           //Next callback
+        console.log('response received ' + account)
+        if (account == null){
+          console.log("fail")
+        }
         this.isLoading = false
       },
       (error) => {                              //Error callback
