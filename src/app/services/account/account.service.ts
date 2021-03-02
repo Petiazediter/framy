@@ -21,7 +21,11 @@ export class AccountService {
   }
 
   loginAccount(account){
-    this.account = account;
+    window.location.assign("http://localhost:4200");
+  }
+
+  refresh(){
+    window.location.assign("http://localhost:4200");
   }
 
 }
