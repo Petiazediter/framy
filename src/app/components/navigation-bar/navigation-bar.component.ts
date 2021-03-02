@@ -24,4 +24,9 @@ export class NavigationBarComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  signOut(){
+    localStorage.clear();
+    this.accountService.refresh()
+  }
+
 }
