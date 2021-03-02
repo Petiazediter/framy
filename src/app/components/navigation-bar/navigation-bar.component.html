@@ -7,9 +7,12 @@
   <ul class="icons">
     <li>
       <a></a>
-      <ul>
+      <ul *ngIf="accountInstance == null">
         <li><a routerLink="/login">Sign In</a></li>
         <li><a routerLink="/register">Sign Up</a></li> 
+      </ul>
+      <ul *ngIf="accountInstance != null">
+        <li><a>{{accountInstance.username}}</a></li>
       </ul>
     </li>
     <li>
