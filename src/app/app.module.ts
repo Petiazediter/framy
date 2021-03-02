@@ -9,7 +9,8 @@ import {CookieModule} from 'ngx-cookie'
 import {HttpClientModule } from '@angular/common/http';
 import { LoginComponent } from './components/logincomponent/login/login/login.component';
 import { RegisterComponent } from './components/logincomponent/register/register/register.component'
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule } from '@angular/forms'
+
 
 @NgModule({
   declarations: [
@@ -17,12 +18,12 @@ import { ReactiveFormsModule } from '@angular/forms';
     HomeComponent,
     NavigationBarComponent,
     LoginComponent,
-    ReactiveFormsModule,
     RegisterComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    FormsModule,
     CookieModule.forRoot(),
     HttpClientModule
   ],
