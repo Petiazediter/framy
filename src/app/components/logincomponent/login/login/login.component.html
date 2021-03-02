@@ -2,14 +2,14 @@
 
     <section>Framy</section>
 
-    <form>
+    <form (ngSubmit)="onSubmit(loginForm)" #loginForm="ngForm">
         <div class="input-container">
             <i></i>
-            <input type="text" placeholder="Username"/>
+            <input ngModel name="username" type="text" placeholder="Username"/>
         </div>
         <div class="input-container">
             <i></i>
-            <input type="password" placeholder="Password"/><br>
+            <input ngModel name="password" type="password" placeholder="Password"/><br>
         </div>
 
         <div class="input-container">
@@ -27,4 +27,8 @@
     </form>
 
     
+</div>
+
+<div *ngIf="isLoading" class="spinner-container">
+    <div class="spinner"></div>
 </div>
