@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Account } from 'src/app/model/Account';
 import { AccountService } from 'src/app/services/account/account.service';
 
 @Component({
@@ -8,8 +9,16 @@ import { AccountService } from 'src/app/services/account/account.service';
 })
 export class NavigationBarComponent implements OnInit {
 
+  accountInstance : Account
+
   constructor(private accountService : AccountService) {
-    console.log(accountService.getUsername())
+    if (accountService.accountObserver != null){
+      accountService.accountObserver.subscribe((account:Account) => {
+        if ( account != null){
+            this.accountInstance = account;
+        }
+      })
+    }
   }
 
   ngOnInit(): void {
