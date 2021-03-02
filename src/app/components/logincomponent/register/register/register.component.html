@@ -2,7 +2,7 @@
 
     <section>Framy</section>
 
-    <form>
+    <form (ngSubmit)="onSubmit(registerForm)" #registerForm="ngForm">
         <div class="input-container">
             <i></i>
             <input name="username" type="text" placeholder="Username"/>
@@ -25,7 +25,7 @@
 
         <div class="input-container">
             <i class="blue"></i>
-            <button type="submit"  class="button button-blue">Sign up</button>
+            <button type="submit" class="button button-blue">Sign up</button>
         </div>
 
 
