@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms'
+import { Account } from 'src/app/model/Account';
+import { AccountApiService } from 'src/app/services/api/account/account-api.service';
 
 @Component({
   selector: 'app-register',
@@ -8,9 +10,17 @@ import { NgForm } from '@angular/forms'
 })
 export class RegisterComponent implements OnInit {
 
+  usernameAndPasswordRegex = new RegExp('^[A-Za-z0-9]+(?:[_-][A-Za-z0-9]+)*$');
+  emailRegex = new RegExp('[^@ \t\r\n]+@[^@ \t\r\n]+\.[^@ \t\r\n]+');
+  account : Account;
+  username : string;
+  password : string;
+  password2 : string;
+  email : string;
   isLoading : boolean = false;
 
-  constructor() { }
+  constructor(private accountService : AccountApiService) { 
+  }
 
   ngOnInit(): void {
     this.isLoading = false
@@ -18,7 +28,40 @@ export class RegisterComponent implements OnInit {
   }
 
   onSubmit(form : NgForm ){
-    console.log(form)
+    this.username = form.value.username
+    this.password = form.value.password1
+    this.password2 = form.value.password2
+    this.email = form.value.email
+
+    if (this.isValid()){
+      this.account = new Account(this.username,this.password,this.email)
+    }
+  }
+
+  private isValid() : boolean{
+    
+    if ( this.password != this.password2){
+      console.log("Password not same")
+      return false
+
+    } else if(!this.usernameAndPasswordRegex.test(this.username)) {
+      console.log("Username contains illegal character")
+      alert("The given username contains illegal character(s)!")
+      return false
+    } else if (this.username.length < 5){
+      console.log("Username too short")
+      alert("The given username is too short!")
+      return false
+    } else if (this.password.length<5){
+      console.log("Password too short")
+      alert("The given password is too short!")
+      return false
+    } else if (!this.emailRegex.test(this.email)){
+      console.log("Email not valid")
+      alert("The format of the email address is not valid!")
+      return false
+    }
+
     // Add account to 
     this.isLoading =true
     this.accountService.addAccount(this.account).subscribe(
