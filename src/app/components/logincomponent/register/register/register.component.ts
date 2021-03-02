@@ -63,6 +63,7 @@ export class RegisterComponent implements OnInit {
     }
 
     // Add account to 
+    this.account = new Account(this.username,this.password,this.email)
     this.isLoading =true
     this.accountService.addAccount(this.account).subscribe(
       (response) => {                           //Next callback
