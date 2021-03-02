@@ -5,22 +5,22 @@
     <form (ngSubmit)="onSubmit(registerForm)" #registerForm="ngForm">
         <div class="input-container">
             <i></i>
-            <input name="username" type="text" placeholder="Username"/>
+            <input ngModel name="username" type="text" placeholder="Username"/>
+        </div>
+
+        <div class="input-container">
+            <i></i>
+            <input ngModel name="email" type="email" placeholder="Email@ddress"/><br>
         </div>
 
         <div class="input-container">
             <i></i>
-            <input name="email" type="email" placeholder="Email@ddress"/><br>
+            <input ngModel name="password1" type="password" placeholder="Password"/><br>
         </div>
 
         <div class="input-container">
             <i></i>
-            <input name="password1" type="password" placeholder="Password"/><br>
-        </div>
-
-        <div class="input-container">
-            <i></i>
-            <input name="password2" type="password" placeholder="Password (2x)"/><br>
+            <input ngModel name="password2" type="password" placeholder="Password (2x)"/><br>
         </div>
 
         <div class="input-container">
