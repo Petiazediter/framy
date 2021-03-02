@@ -12,8 +12,10 @@ export class LoginComponent implements OnInit {
 
   username : string;
   password : string;
+  isLoading : boolean = false
 
-  constructor(private apiService : AccountApiService) { }
+  constructor(private apiService : AccountApiService) {
+   }
 
   ngOnInit(): void {
  
@@ -22,8 +24,10 @@ export class LoginComponent implements OnInit {
   onSubmit(form : NgForm){
     this.username = form.value.username;
     this.password = form.value.password;
+    this.isLoading =true
     this.apiService.loginAccount(new Account(this.username,this.password,"")).subscribe(
-      (account : Account) => {                           //Next callback
+      (account : Account) => {   
+        this.isLoading = false                        //Next callback
         if (account == null){
           alert("User not found.")
         } else {
@@ -31,7 +35,8 @@ export class LoginComponent implements OnInit {
           localStorage.setItem("password",this.password)
         }
       },
-      (error) => {                              //Error callback
+      (error) => {   
+        this.isLoading = false                           //Error callback
         alert(error)
       }
     )
