@@ -10,7 +10,8 @@ import {HttpClientModule } from '@angular/common/http';
 import { LoginComponent } from './components/logincomponent/login/login/login.component';
 import { RegisterComponent } from './components/logincomponent/register/register/register.component'
 import { FormsModule } from '@angular/forms';
-import { SidebarComponent } from './components/sidebar/sidebar/sidebar.component'
+import { SidebarComponent } from './components/sidebar/sidebar/sidebar.component';
+import { MyProjectsComponent } from './components/sidebar/my-projects/my-projects.component'
 
 
 @NgModule({
@@ -20,7 +21,8 @@ import { SidebarComponent } from './components/sidebar/sidebar/sidebar.component
     NavigationBarComponent,
     LoginComponent,
     RegisterComponent,
-    SidebarComponent
+    SidebarComponent,
+    MyProjectsComponent
   ],
   imports: [
     BrowserModule,
