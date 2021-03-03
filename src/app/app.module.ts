@@ -9,7 +9,8 @@ import {CookieModule} from 'ngx-cookie'
 import {HttpClientModule } from '@angular/common/http';
 import { LoginComponent } from './components/logincomponent/login/login/login.component';
 import { RegisterComponent } from './components/logincomponent/register/register/register.component'
-import { FormsModule } from '@angular/forms'
+import { FormsModule } from '@angular/forms';
+import { SidebarComponent } from './components/sidebar/sidebar/sidebar.component'
 
 
 @NgModule({
@@ -18,7 +19,8 @@ import { FormsModule } from '@angular/forms'
     HomeComponent,
     NavigationBarComponent,
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
+    SidebarComponent
   ],
   imports: [
     BrowserModule,
