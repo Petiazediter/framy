@@ -23,6 +23,10 @@
             transform: translateX(-50%);
         }
 
+        .active{
+            color: #F44848;
+        }
+
         div.menupoints.bottom_icons{
             top: 50%;
             transform: translate(-50%,-120%);

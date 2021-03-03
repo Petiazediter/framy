@@ -2,8 +2,8 @@
     <div class="title">Dashboard</div>
     <div class="menupoints">
         <ul>
-            <li>
-                <i></i>
+            <li [ngClass]="{'active': currentPage == 0}" (click)="onChangePage(0)" >
+                <i></i>
                 <a>My Projects</a>
             </li>
             <li>

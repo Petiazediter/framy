@@ -7,9 +7,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SidebarComponent implements OnInit {
 
+  currentPage = 0
+
   constructor() { }
 
   ngOnInit(): void {
+  
+  }
+
+  onChangePage(page){
+    this.currentPage = page
+    console.log("page change")
   }
 
 }
