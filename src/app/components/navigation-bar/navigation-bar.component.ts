@@ -9,19 +9,14 @@ import { AccountService } from 'src/app/services/account/account.service';
 })
 export class NavigationBarComponent implements OnInit {
 
-  accountInstance : Account
+  accountInstance : Account;
 
   constructor(private accountService : AccountService) {
-    if (accountService.accountObserver != null){
-      accountService.accountObserver.subscribe((account:Account) => {
-        if ( account != null){
-            this.accountInstance = account;
-        }
-      })
-    }
+      AccountService.accountInstanceObserver.subscribe(account => this.accountInstance = account)
   }
 
   ngOnInit(): void {
+    
   }
 
   signOut(){
