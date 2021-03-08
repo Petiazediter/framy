@@ -13,14 +13,8 @@ export class HomeComponent implements OnInit {
   accountInstance : Account
 
   constructor(private accountApi : AccountApiService, private accountService  :AccountService) {
-    if (accountService.accountObserver != null){
-      accountService.accountObserver.subscribe((account:Account) => {
-        if ( account != null){
-            this.accountInstance = account;
-        }
-      })
+   AccountService.accountInstanceObserver.subscribe( account => this.accountInstance = account );
     }
-  }
 
   ngOnInit(): void {
 
