@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { CookieOptionsProvider, CookieService, COOKIE_OPTIONS } from 'ngx-cookie';
 import { Observable } from 'rxjs';
@@ -8,16 +9,11 @@ import { AccountApiService } from '../api/account/account-api.service';
   providedIn: 'root'
 })
 export class AccountService {
+  
+  public static accountInstanceObserver : Observable<Account>;
 
-  account : Account;
-  accountObserver : Observable<Account>
-
-  constructor(private accountApi : AccountApiService) {
-    const username = localStorage.getItem("username")
-    const password = localStorage.getItem("password")
-    if ( username != null && password != null){
-     this.accountObserver= accountApi.loginAccount(new Account(username,password,""))
-    }
+  constructor(private accountApi : AccountApiService, private httpClient : HttpClient) {
+    AccountService.accountInstanceObserver = this.httpClient.get<Account>("http://localhost:8080/api/cookielogin");
   }
 
   loginAccount(account){
