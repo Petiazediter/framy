@@ -65,11 +65,11 @@ export class RegisterComponent implements OnInit {
       (account : Account) => {                     
         if (account == null){
           alert("Username or email address is already taken.")
+          return;
         }
         this.isLoading = false
-        localStorage.setItem("username", this.account.username)
-        localStorage.setItem("password",this.account.password)
         this.accountServ.loginAccount(account)
+        console.log(account)
       },
       (error) => {                              //Error callback
         alert("Server error. Try again later.")
