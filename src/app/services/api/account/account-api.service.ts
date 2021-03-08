@@ -9,8 +9,8 @@ import { Account } from 'src/app/model/Account';
 export class AccountApiService {
 
   private baseUrl : string = "http://localhost:8080"
-  private accountsApi : string = "/accounts"
-  private accountLoginApi : string ="/loginAccount"
+  private accountsApi : string = "/api/register"
+  private accountLoginApi : string ="/api/login"
 
   constructor(private httpClient : HttpClient) { }
 
