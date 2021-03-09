@@ -1,9 +1,4 @@
-:root{
-  --green: #8FDD6E; 
-  --blue: #4FB4F4; 
-  --red: #F44848;
-  --yellow: #FADB3D;
-} 
+
 
 @media only screen and (min-width: 1200px) and (min-height: 776px) {
 
@@ -15,7 +10,7 @@
   width:300px;
   height: 50px;
   transform:translate(-50%,-50%);
-  background: #4FB4F4;
+  background: var(--color-primary);
   border: 0px none;
   border-radius: .5rem;
   font-family: 'Fredoka';
@@ -66,6 +61,7 @@
 .content__container__list{
   list-style-type: none;
   animation: flip4 10s ease infinite;
+  color: var(--color-primary);
 }
 
 
@@ -87,19 +83,5 @@
 }
 
 
-}
-
-.green{
-  color:#8FDD6E;
-}
-
-.blue{
-  color:#4FB4F4;
-}
-.yellow{
-  color : #FADB3D;
-}
-.red{
-  color: #F44848;
 }
 

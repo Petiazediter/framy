@@ -11,12 +11,12 @@
             position: absolute;
             top: 50%;
             left: 50%;
-            border: 2px solid #4FB4F4;
+            border: 2px solid var(--color-primary);
             border-radius: 50%;
-            border-top: 5px solid #8FDD6E;
-            border-right: 5px solid #4FB4F4;
-            border-bottom: 5px solid #FADB3D;
-            border-left: 5px solid #F44848;
+            border-top: 5px solid var(--dark-shade);
+            border-right: 5px solid var(--color-primary);
+            border-bottom: 5px solid var(--color-light);
+            border-left: 5px solid var(--color-accent);
             width: 40px;
             height: 40px;
             -webkit-animation: spin 1.5s linear infinite;
@@ -92,7 +92,7 @@
                     padding: 10px;
                     border-top-left-radius: 10px;
                     border-bottom-left-radius: 10px;
-                    background-color:  #4FB4F4;
+                    background-color:  var(--color-primary);
                     font-size: 15px;
                     font-family: 'IcoFont';
                     font-style: normal;
@@ -102,11 +102,11 @@
                 }
 
                 i.green{
-                    background-color: #8FDD6E;
+                    background-color: var(--dark-shade);
                 }
 
                 i.blue{
-                    background-color:  #4FB4F4;
+                    background-color:  var(--color-primary);
                 }
 
                 input{
@@ -120,7 +120,7 @@
                 }
 
                 input:focus{
-                    outline-color: #4FB4F4;
+                    outline-color: var(--color-primary);
                 }
 
                 button{
@@ -135,11 +135,11 @@
                 }
 
                 button.button-blue{
-                    background-color: #4FB4F4;
+                    background-color: var(--color-primary);
                 }
 
                 button.button-green{
-                    background-color: #8FDD6E;
+                    background-color: var(--dark-shade);
                 }
 
             }
