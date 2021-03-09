@@ -27,14 +27,12 @@ export class LoginComponent implements OnInit {
     this.password = form.value.password;
     this.isLoading =true
     this.apiService.loginAccount(new Account(this.username,this.password,"")).subscribe(
-      (account : Account) => {   
+      (response : Account) => {   
         this.isLoading = false                        //Next callback
-        if (account == null){
+        if (response == null){
           alert("User not found.")
         } else {
-          localStorage.setItem("username", this.username)
-          localStorage.setItem("password",this.password)
-          this.accountService.loginAccount(account)
+          this.accountService.loginAccount(response)
         }
       },
       (error) => {   
