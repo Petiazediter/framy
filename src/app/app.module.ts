@@ -6,12 +6,13 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
 import { NavigationBarComponent } from './components/navigation-bar/navigation-bar.component';
 import {CookieModule} from 'ngx-cookie'
-import {HttpClientModule } from '@angular/common/http';
+import {HttpClientModule,HTTP_INTERCEPTORS } from '@angular/common/http';
 import { LoginComponent } from './components/logincomponent/login/login/login.component';
 import { RegisterComponent } from './components/logincomponent/register/register/register.component'
 import { FormsModule } from '@angular/forms';
 import { SidebarComponent } from './components/sidebar/sidebar/sidebar.component';
 import { MyProjectsComponent } from './components/sidebar/my-projects/my-projects.component'
+import { MyInterceptor } from './interceptors/http.interceptor';
 
 
 @NgModule({
@@ -31,7 +32,7 @@ import { MyProjectsComponent } from './components/sidebar/my-projects/my-project
     CookieModule.forRoot(),
     HttpClientModule
   ],
-  providers: [],
+  providers: [{provide: HTTP_INTERCEPTORS,useClass: MyInterceptor,multi:true}],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
