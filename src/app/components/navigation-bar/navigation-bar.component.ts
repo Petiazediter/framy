@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { Account } from 'src/app/model/Account';
 import { AccountService } from 'src/app/services/account/account.service';
@@ -11,7 +12,7 @@ export class NavigationBarComponent implements OnInit {
 
   accountInstance : Account;
 
-  constructor(private accountService : AccountService) {
+  constructor(private accountService : AccountService,private httpClient : HttpClient) {
       AccountService.accountInstanceObserver.subscribe(account => this.accountInstance = account)
   }
 
@@ -20,8 +21,11 @@ export class NavigationBarComponent implements OnInit {
   }
 
   signOut(){
-    localStorage.clear();
-    this.accountService.refresh()
+    this.httpClient.get<number>("http://localhost:8080/api/signout").subscribe(
+      (response) => {
+        this.accountService.refresh()
+      }
+    )
   }
 
 }
