@@ -1,0 +1,11 @@
+nav.header{
+    position: relative;
+    width: 100%;
+    max-height: 100px;
+    background-color: var(--color-primary);
+}
+
+i.title{
+    font-family: 'Fredoka';
+    color: white;
+}
