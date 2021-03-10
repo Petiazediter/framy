@@ -1,4 +1,8 @@
 <div class="container">
     <app-page-header navTitle="a" buttonText="New Project" buttonIcon="x"></app-page-header>
 
+    <div class="center" *ngIf="(projects?.length || '0') == 0" >
+        <img class="no-projects-img center" src="assets/images/planning.svg">
+        <section class="center">You don't have any projects. Why don't you start one?</section>
+    </div>
 </div> 
