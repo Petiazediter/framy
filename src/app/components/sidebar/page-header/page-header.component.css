@@ -1,11 +1,56 @@
 nav.header{
     position: relative;
     width: 100%;
-    max-height: 100px;
     background-color: var(--color-primary);
+    display: flex;
 }
 
 i.title{
+    position: relative;
+    height: 100%;
     font-family: 'Fredoka';
     color: white;
+    top: 100%;
+    font-style: normal;
+    padding: 20px;
+}
+
+div.navsection{
+    position: relative;
+    float: right;
+    right: 0%;
+    width: 75%;
+    align-self: flex-end;
+    position: relative;
+    padding: 10px;
+    display: flex;
+    justify-content: flex-end;
+}
+
+button.btn-txt{
+    background-color: var(--dark-shade);
+    border: none;
+    outline: none;
+    font-family: 'Fredoka';
+    margin: 0px;
+    font-size: 12px;
+    color: white;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+i.btn-icon{
+    background-color: var(--dark-shade);
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    font-family: 'IcoFont';
+    font-size: 14px;
+    margin-right: 0px;
+    color: white;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 5px;
+    font-style: normal;
 }
