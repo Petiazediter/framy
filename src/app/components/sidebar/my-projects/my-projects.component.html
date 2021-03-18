@@ -5,4 +5,8 @@
         <img class="no-projects-img center" src="assets/images/planning.svg">
         <section class="center">You don't have any projects. Why don't you start one?</section>
     </div>
+
+    <div class="center" *ngIf="(projects?.length || '0') > 0" >
+        Projects here
+    </div>
 </div> 

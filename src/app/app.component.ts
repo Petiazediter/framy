@@ -12,7 +12,7 @@ export class AppComponent implements AfterViewInit{
 
   ngAfterViewInit(){
     //this.elementRef.nativeElement.ownerDocument.body.style.backgroundColor = '#fffacd';
-    this.elementRef.nativeElement.ownerDocument.body.style.backgroundColor = '#F8F8F8';//'#FFFD74';
+    this.elementRef.nativeElement.ownerDocument.body.style.backgroundColor = '#F0FAFF';//'#FFFD74';
   }
 
 }

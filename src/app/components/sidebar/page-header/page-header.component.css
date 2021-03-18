@@ -39,6 +39,7 @@ button.btn-txt{
     padding-bottom: 10px;
     border-top-right-radius: 10px;
     border-bottom-right-radius: 10px;
+    cursor: pointer;
 }
 
 i.btn-icon{
@@ -53,4 +54,5 @@ i.btn-icon{
     padding-bottom: 10px;
     padding-left: 5px;
     font-style: normal;
+    cursor: pointer;
 }

@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { GroupProjectWrapper } from 'src/app/model/GroupProjectWrapper';
+import { GroupService } from 'src/app/services/api/group/group.service';
 
 @Component({
   selector: 'app-my-projects',
@@ -7,11 +9,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MyProjectsComponent implements OnInit {
 
-  projects : any[];
+  projects : GroupProjectWrapper[];
 
-  constructor() { }
+  constructor(private groupService : GroupService) {
+    groupService.getProjectsByGroups().subscribe((wrappers : GroupProjectWrapper[]) => {
+      console.log(wrappers)
+      this.projects = wrappers
+    })
+  }
 
   ngOnInit(): void {
+    
   }
 
 }
