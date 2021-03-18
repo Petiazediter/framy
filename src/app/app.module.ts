@@ -14,6 +14,7 @@ import { SidebarComponent } from './components/sidebar/sidebar/sidebar.component
 import { MyProjectsComponent } from './components/sidebar/my-projects/my-projects.component'
 import { MyInterceptor } from './interceptors/http.interceptor';
 import { PageHeaderComponent } from './components/sidebar/page-header/page-header.component';
+import { NewProjectPageComponent } from './components/sidebar/new-project-page/new-project-page.component';
 
 
 @NgModule({
@@ -25,7 +26,8 @@ import { PageHeaderComponent } from './components/sidebar/page-header/page-heade
     RegisterComponent,
     SidebarComponent,
     MyProjectsComponent,
-    PageHeaderComponent
+    PageHeaderComponent,
+    NewProjectPageComponent
   ],
   imports: [
     BrowserModule,

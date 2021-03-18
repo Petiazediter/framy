@@ -10,6 +10,7 @@ export class PageHeaderComponent implements OnInit {
   @Input() navTitle : string;
   @Input() buttonText : string;
   @Input() buttonIcon : string; 
+  @Input() navLink : string;
 
   constructor() { }
 
